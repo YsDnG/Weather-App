@@ -1,0 +1,262 @@
+*,*::before,*::after{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+/**** CSS variables *****/
+:root{
+    --main-color-1: rgba(0,174,255,0.5);
+    --main-color-2: rgb(0,67,255);
+    --main-color-3: rgb(0,41,187,0.5);
+    --main-color-4: rgb(0,15,92);
+    --text-color: rgb(2,0,33)
+
+}
+
+#app{  
+    height: 100vh;
+    width: 100vw;
+    padding: 2em;
+    background-image: url('../Img/d34d568ad360338ba88337d41c23242d.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center 35%;
+    color: wheat;
+    display: grid;
+    grid-template-rows: 50vh 20vh;
+    grid-template-columns: 1fr;
+    grid-template-areas: "weatherInfo weatherInfo"
+                "weatherPrevision weatherPrevision";
+    gap: 2em;
+    justify-content: center;
+    
+}
+button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-color-1);
+    color: var(--main-color-4);
+    width: 2em;
+    height: 2em;
+
+    border: 1px dotted var(--main-color-3)
+}
+
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:0.3em
+}
+input{
+    height: 2em;
+    background-color: var(--main-color-1);
+    color: black;
+    border: 1px dotted var(--main-color-3)
+}
+input::placeholder
+{
+    text-align: center;
+    color: var(--main-color-4);
+}
+.material-symbols-outlined.Icon-description-weather {
+    font-size: 2em !important ;
+}
+.material-symbols-outlined
+{
+    font-size: 1.5em!important;
+}
+
+
+.title{
+    font-size: 2em;
+    grid-area: title;
+    text-align: center;
+
+}
+
+.Weather-info{
+    padding: 1em;
+    grid-area: weatherInfo;
+
+    border-radius: 10px;
+    display: grid;
+    justify-content: center;
+    grid-row: 1/2;
+       
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.10fr 2fr;
+    grid-template-areas: 
+    "title title "
+    "weatherLeft weatherRight "
+     ;
+    gap: 1em;
+    font-size: 0.75em;
+
+    background-color: var(--main-color-1);
+    color: var(--text-color)
+}
+
+.Weather-info-left
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 5%;
+    border-bottom: solid 3px var(--main-color-3);
+    border-left: solid 2px var(--main-color-4);
+    border-top: solid 2px var(--main-color-3);
+    border-right: solid 2px var(--main-color-3); ;
+    border-radius: 5px;
+    font-size: 1.25em;
+    grid-area: weatherLeft;
+}
+
+.Weather-info-right
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 5%;
+
+
+    border-bottom: solid 3px var(--main-color-3);
+    border-left: solid 2px var(--main-color-4);
+    border-top: solid 2px var(--main-color-3);
+    border-right: solid 2px var(--main-color-3); 
+    border-radius: 5px;
+    font-size: 1.25em;
+    grid-area: weatherRight;
+
+}
+.weather-detail-right
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.25em;
+    width: 80%;
+}
+
+.Weather-info-right span
+{
+    font-size: 2.25em !important;
+    display: flex;
+    justify-content:left;
+    align-items:center;
+} 
+
+.weather-prevision
+{
+    grid-area: weatherPrevision;
+    grid-row: 2/2;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-color-1);
+    color: var(--text-color)
+}
+.prevision-day
+{
+
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    align-items: center;
+    font-size: 1em;
+    gap: 1em;
+}
+
+.Error
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    font-size: 0.75em;
+}
+.Error.title{
+    font-size: 2em;
+}
+
+@media (max-width:500px)
+{
+    #app{
+       padding: 0.5em;
+       gap: 0.5em;
+       grid-template-rows: 1fr 0.5fr;
+       
+    }
+    .title
+    {
+        font-size: 1.5em;
+    }
+    input{
+        height: 1.5em;
+    }
+    button{
+    width: 1.5em;
+    height: 1.5em;
+    }
+    form{
+        margin: 0.25em;
+        gap: 0.25em;
+    }
+
+    .material-symbols-outlined.Icon-description-weather {
+        font-size: 2.5em !important ;
+    }
+    .material-symbols-outlined
+    {
+        font-size: 1em!important;
+    }
+    .Weather-info-left{
+        font-size: 1em;
+    }
+
+    .Weather-info-right span
+    {
+        font-size: 1.75em !important;
+        display: flex;
+        justify-content:left;
+        align-items:center;
+    }
+    
+    .weather-detail-right
+    {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75em;
+    font-size: 0.75em;
+    width: 80%;
+}
+.prevision-day
+{
+
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    align-items: center;
+    font-size: 0.75em;
+    gap: 1em;
+}
+
+
+}
+
+
+
+
+
