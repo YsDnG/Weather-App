@@ -7,6 +7,7 @@ function iconApiResponse(weather_descriptions)
         "Partly cloudy": "partly_cloudy_day",
         "Cloudy" :"cloud",
         "Misty" :"foggy",
+        "Mist":"foggy",
         "Fopggy":"foggy",
         "Overcast":"foggy",
         "Light rain":"rainy",

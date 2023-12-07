@@ -21,7 +21,7 @@ function createForm(element)
         document.getElementById('app').innerHTML=''
         let formData= new FormData(e.target)
                 
-        apiFunction("http://api.weatherstack.com/current?access_key=40982dd51b2225157ed02cbde6036642&query="+formData.get('city'))
+        apiFunction(formData.get('city'))
             .then(data => {
                 console.log(data)
                 if(data === -1)
@@ -43,7 +43,7 @@ function createForm(element)
                 console.error('Erreur:',error)
                 throw error;
             })
-        apiFunctionWithPrevisionData("http://api.openweathermap.org/data/2.5/forecast?q="+formData.get('city')+"&appid=8e42f9ecec558155265d785c89d9fba0&units=metric")
+        apiFunctionWithPrevisionData(formData.get('city'))
             .then(data=>{
     
                 createWeatherPrevision(data)

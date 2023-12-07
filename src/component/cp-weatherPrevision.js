@@ -5,6 +5,7 @@ import createElementWithText from './cp-createElementWithText'
 function createWeatherPrevision(data)
 {
 
+    console.log(data)
     const dayafter = 8
     const weatherPrevision = Container("weather-prevision")
     const day1 = Container('prevision-day',weatherPrevision)

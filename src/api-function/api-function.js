@@ -1,17 +1,19 @@
 
-function apiFunction(url)
+function apiFunction(param)
 {
     let weather_Info;
-    const defaultUrl = "http://api.weatherstack.com/current?access_key=40982dd51b2225157ed02cbde6036642&query=Clermont-Ferrand";
-    return fetch(url || defaultUrl)
+   
+    const url = param ? `http://localhost:3000/weather?api=weatherstack&query=${param}`:`http://localhost:3000/weather?api=weatherstack `
+    return fetch( url)
     .then(response => {
+        
         if (!response.ok) {
             throw new Error('Réponse réseau non ok');
           }
           return response.json();
     })
     .then (data =>{
-        console.log(data)
+        
         if(data.success !== false)
         {
         // Extract the data 
@@ -41,10 +43,10 @@ function apiFunction(url)
     })
 }
 
-function apiFunctionWithPrevisionData(url)
+function apiFunctionWithPrevisionData(param)
 {
-    const defaultUrl = "http://api.openweathermap.org/data/2.5/forecast?q=Clermont-Ferrand&appid=8e42f9ecec558155265d785c89d9fba0&units=metric"
-    return fetch(url || defaultUrl)
+    const url = param ? `http://localhost:3000/weather?api=openweather&query=${param}`:"http://localhost:3000/weather?api=openweather" 
+    return fetch(url)
     .then(response=>{
         if (!response.ok) {
             throw new Error('Réponse réseau non ok');

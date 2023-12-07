@@ -6,6 +6,11 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
+  devServer:{
+    proxy:{
+      '/api':'http://localhos:3000'
+    }
+  },
    module: {
     rules: [
       {
@@ -26,5 +31,6 @@ module.exports = {
       },
     ],
   },
+  devtool:'source-map'
   
 };
