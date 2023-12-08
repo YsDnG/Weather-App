@@ -78,6 +78,22 @@ input::placeholder
     text-align: center;
 
 }
+.Init{
+    padding: 1em;
+   
+
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+
+    background-color: var(--main-color-3);
+    color: var(--text-color)
+}
+
+
 
 .Weather-info{
     padding: 1em;

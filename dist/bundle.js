@@ -4474,16 +4474,13 @@ function apiFunction(city)
     console.log(url)
     return fetch( url)
     .then(response => {
-        
         if(response.status=== 429)
         {
-            (0,_component_cp_createElementWithText__WEBPACK_IMPORTED_MODULE_0__["default"])('h1',"Server request full please retry in 1hour",null,"Error")
-            document.getElementById('app').classList.add('Error-Serveur');
+            document.querySelector('.Init').innerHTML ="Server request full please retry in 1hour"          
         }
         if (!response.ok) {
             throw new Error('Réponse réseau non ok');
           }
-          document.getElementById('app').classList.remove('Error-Serveur');
           return response.json();
     })
     .then (data =>{
@@ -5104,16 +5101,45 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-(0,_api_function_api_function__WEBPACK_IMPORTED_MODULE_1__.apiFunction)()
-.then(weather_Info=>{
-    (0,_component_cp_weatherInfo__WEBPACK_IMPORTED_MODULE_0__["default"])(weather_Info);
-})
 
 
-;(0,_api_function_api_function__WEBPACK_IMPORTED_MODULE_1__.apiFunctionWithPrevisionData)()
-.then(data=>{
-    ;(0,_component_cp_weatherPrevision__WEBPACK_IMPORTED_MODULE_3__["default"])(data)
-})
+fetch('https://cors-anywhere.herokuapp.com/')
+  .then(response => {
+    if (!response.ok) 
+      throw new Error('Cors-anywhere is not reachable at the moment');
+    
+    /*WeatherStack api information for the day  */
+        (0,_api_function_api_function__WEBPACK_IMPORTED_MODULE_1__.apiFunction)()
+            .then(weather_Info=>{
+
+                (0,_component_cp_weatherInfo__WEBPACK_IMPORTED_MODULE_0__["default"])(weather_Info);
+                document.querySelector('.Init').style.display = "none";
+
+                
+        })
+        .catch(error => {
+            console.error('WeatherStack API:', error);
+              document.querySelector('.Init').innerHTML = "WeatherStack API:"+error;
+        })
+     /*OpenWeather api information for the previson for the next 4 days  */    
+        ;(0,_api_function_api_function__WEBPACK_IMPORTED_MODULE_1__.apiFunctionWithPrevisionData)()
+            .then(data=>{
+                  ;(0,_component_cp_weatherPrevision__WEBPACK_IMPORTED_MODULE_3__["default"])(data)
+              })
+            .catch(error => {
+                console.error('OpenWeather API:', error);
+                  document.querySelector('.Init').innerHTML = "OpenWeather API:"+error;
+            
+            })
+    })
+    .catch(error => {
+    console.error('Error:', error);
+    if (error.message === 'Cors-anywhere is not reachable at the moment') {
+      document.querySelector('.Init').innerHTML = error.message;
+    }
+  });
+
+
 
 
 

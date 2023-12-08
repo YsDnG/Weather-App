@@ -10,16 +10,13 @@ function apiFunction(city)
     console.log(url)
     return fetch( url)
     .then(response => {
-        
         if(response.status=== 429)
         {
-            createElementWithText('h1',"Server request full please retry in 1hour",null,"Error")
-            document.getElementById('app').classList.add('Error-Serveur');
+            document.querySelector('.Init').innerHTML ="Server request full please retry in 1hour"          
         }
         if (!response.ok) {
             throw new Error('Réponse réseau non ok');
           }
-          document.getElementById('app').classList.remove('Error-Serveur');
           return response.json();
     })
     .then (data =>{
