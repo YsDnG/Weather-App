@@ -5983,21 +5983,21 @@ __webpack_require__.r(__webpack_exports__);
 
 fetch('https://cors-anywhere.herokuapp.com/')
   .then(response => {
-    if (!response.ok) 
+    if (!response.ok)
       throw new Error('Cors-anywhere is not reachable at the moment');
     
     /*WeatherStack api information for the day  */
         (0,_api_function_api_function__WEBPACK_IMPORTED_MODULE_1__.apiFunction)()
             .then(weather_Info=>{
-
-                (0,_component_cp_weatherInfo__WEBPACK_IMPORTED_MODULE_0__["default"])(weather_Info);
                 document.querySelector('.Init').style.display = "none";
+                (0,_component_cp_weatherInfo__WEBPACK_IMPORTED_MODULE_0__["default"])(weather_Info);
+                
 
                 
         })
         .catch(error => {
             console.error('WeatherStack API:', error);
-              document.querySelector('.Init').innerHTML = "WeatherStack API:"+error;
+              // document.querySelector('.Init').innerHTML += "WeatherStack API:"+error;
         })
      /*OpenWeather api information for the previson for the next 4 days  */    
         ;(0,_api_function_api_function__WEBPACK_IMPORTED_MODULE_1__.apiFunctionWithPrevisionData)()
@@ -6013,7 +6013,10 @@ fetch('https://cors-anywhere.herokuapp.com/')
     .catch(error => {
     console.error('Error:', error);
     if (error.message === 'Cors-anywhere is not reachable at the moment') {
-      document.querySelector('.Init').innerHTML = error.message;
+      document.querySelector('.Init').innerHTML = ` Weather Application
+      The Weather Application is a project developed as part of The Odin Project curriculum. 
+      The proxy, hosted at <a href=">https://cors-anywhere.herokuapp.com/corsdemo">cors-anywhere</a>, acts as an intermediary between the application and the weather data source.
+      For a demo`
     }
   });
 
