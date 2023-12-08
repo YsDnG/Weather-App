@@ -6015,7 +6015,7 @@ fetch('https://cors-anywhere.herokuapp.com/')
     if (error.message === 'Cors-anywhere is not reachable at the moment') {
       document.querySelector('.Init').innerHTML = ` Weather Application
       The Weather Application is a project developed as part of The Odin Project curriculum. 
-      The proxy, hosted at <a href=">https://cors-anywhere.herokuapp.com/corsdemo">cors-anywhere</a>, acts as an intermediary between the application and the weather data source.
+      The proxy, hosted at <a href="https://cors-anywhere.herokuapp.com/corsdemo">cors-anywhere</a>, acts as an intermediary between the application and the weather data source.
       For a demo`
     }
   });
