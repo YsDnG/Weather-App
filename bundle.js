@@ -1,6 +1,488 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/css/common.css":
+/*!******************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/css/common.css ***!
+  \******************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/sourceMaps.js */ "./node_modules/css-loader/dist/runtime/sourceMaps.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/getUrl.js */ "./node_modules/css-loader/dist/runtime/getUrl.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
+// Imports
+
+
+
+var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../Img/d34d568ad360338ba88337d41c23242d.jpg */ "./src/Img/d34d568ad360338ba88337d41c23242d.jpg"), __webpack_require__.b);
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, `*,*::before,*::after{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+/**** CSS variables *****/
+:root{
+    --main-color-1: rgba(0,174,255,0.5);
+    --main-color-2: rgb(0,67,255);
+    --main-color-3: rgb(0,41,187,0.5);
+    --main-color-4: rgb(0,15,92);
+    --text-color: rgb(80,255,255)
+
+}
+
+#app{  
+    height: 100vh;
+    width: 100vw;
+    padding: 2em;
+    background-image: url(${___CSS_LOADER_URL_REPLACEMENT_0___});
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center 35%;
+    color: wheat;
+    display: grid;
+    grid-template-rows: 50vh 20vh;
+    grid-template-columns: 1fr;
+    grid-template-areas: "weatherInfo weatherInfo"
+                "weatherPrevision weatherPrevision";
+    gap: 2em;
+    justify-content: center;
+    
+}
+button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-color-1);
+    color: var(--main-color-4);
+    width: 2em;
+    height: 2em;
+
+    border: 1px dotted var(--main-color-3)
+}
+
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:0.3em
+}
+input{
+    height: 2em;
+    background-color: var(--main-color-1);
+    color: black;
+    border: 1px dotted var(--main-color-3)
+}
+input::placeholder
+{
+    text-align: center;
+    color: var(--main-color-4);
+}
+.material-symbols-outlined.Icon-description-weather {
+    font-size: 2em !important ;
+}
+.material-symbols-outlined
+{
+    font-size: 1.5em!important;
+}
+
+
+.title{
+    font-size: 2em;
+    grid-area: title;
+    text-align: center;
+
+}
+.Init{
+    padding: 1em;
+   
+
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+
+    background-color: var(--main-color-3);
+    color: var(--text-color)
+}
+
+
+
+.Weather-info{
+    padding: 1em;
+    grid-area: weatherInfo;
+
+    border-radius: 10px;
+    display: grid;
+    justify-content: center;
+    grid-row: 1/2;
+       
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.10fr 2fr;
+    grid-template-areas: 
+    "title title "
+    "weatherLeft weatherRight "
+     ;
+    gap: 1em;
+    font-size: 0.75em;
+
+    background-color: var(--main-color-3);
+    color: var(--text-color)
+}
+
+.Weather-info-left
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 5%;
+    border-bottom: solid 3px var(--main-color-3);
+    border-left: solid 2px var(--main-color-4);
+    border-top: solid 2px var(--main-color-3);
+    border-right: solid 2px var(--main-color-3); ;
+    border-radius: 5px;
+    font-size: 1.25em;
+    grid-area: weatherLeft;
+}
+
+.Weather-info-right
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 5%;
+
+
+    border-bottom: solid 3px var(--main-color-3);
+    border-left: solid 2px var(--main-color-4);
+    border-top: solid 2px var(--main-color-3);
+    border-right: solid 2px var(--main-color-3); 
+    border-radius: 5px;
+    font-size: 1.25em;
+    grid-area: weatherRight;
+
+}
+.weather-detail-right
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.25em;
+    width: 80%;
+}
+
+.Weather-info-right span
+{
+    font-size: 2.25em !important;
+    display: flex;
+    justify-content:left;
+    align-items:center;
+} 
+
+.weather-prevision
+{
+    grid-area: weatherPrevision;
+    grid-row: 2/2;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-color-3);
+    color: var(--text-color)
+}
+.prevision-day
+{
+
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    align-items: center;
+    font-size: 1em;
+    gap: 1em;
+}
+.prevision-description
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Error
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    font-size: 0.75em;
+}
+.Error.title{
+    font-size: 2em;
+}
+.Error-Serveur
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    font-size: 2em;
+}
+
+@media (max-width:500px)
+{
+    #app{
+       padding: 0.5em;
+       gap: 0.5em;
+       grid-template-rows: 1fr 0.5fr;
+       
+    }
+    .title
+    {
+        font-size: 1.5em;
+    }
+    input{
+        height: 1.5em;
+    }
+    button{
+    width: 1.5em;
+    height: 1.5em;
+    }
+    form{
+        margin: 0.25em;
+        gap: 0.25em;
+    }
+
+    .material-symbols-outlined.Icon-description-weather {
+        font-size: 2.5em !important ;
+    }
+    .material-symbols-outlined
+    {
+        font-size: 1em!important;
+    }
+    .Weather-info-left{
+        font-size: 1em;
+    }
+
+    .Weather-info-right span
+    {
+        font-size: 1.75em !important;
+        display: flex;
+        justify-content:left;
+        align-items:center;
+    }
+    
+    .weather-detail-right
+    {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75em;
+    font-size: 0.75em;
+    width: 80%;
+}
+.prevision-day
+{
+
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    align-items: center;
+    font-size: 0.75em;
+    gap: 1em;
+}
+
+
+}
+
+
+
+
+
+`, "",{"version":3,"sources":["webpack://./src/css/common.css"],"names":[],"mappings":"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","sourcesContent":["*,*::before,*::after{\n    box-sizing: border-box;\n    padding: 0;\n    margin: 0;\n    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;\n\n}\n\n/**** CSS variables *****/\n:root{\n    --main-color-1: rgba(0,174,255,0.5);\n    --main-color-2: rgb(0,67,255);\n    --main-color-3: rgb(0,41,187,0.5);\n    --main-color-4: rgb(0,15,92);\n    --text-color: rgb(80,255,255)\n\n}\n\n#app{  \n    height: 100vh;\n    width: 100vw;\n    padding: 2em;\n    background-image: url('../Img/d34d568ad360338ba88337d41c23242d.jpg');\n    background-repeat: no-repeat;\n    background-size:cover;\n    background-position: center 35%;\n    color: wheat;\n    display: grid;\n    grid-template-rows: 50vh 20vh;\n    grid-template-columns: 1fr;\n    grid-template-areas: \"weatherInfo weatherInfo\"\n                \"weatherPrevision weatherPrevision\";\n    gap: 2em;\n    justify-content: center;\n    \n}\nbutton{\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    background-color: var(--main-color-1);\n    color: var(--main-color-4);\n    width: 2em;\n    height: 2em;\n\n    border: 1px dotted var(--main-color-3)\n}\n\nform{\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    gap:0.3em\n}\ninput{\n    height: 2em;\n    background-color: var(--main-color-1);\n    color: black;\n    border: 1px dotted var(--main-color-3)\n}\ninput::placeholder\n{\n    text-align: center;\n    color: var(--main-color-4);\n}\n.material-symbols-outlined.Icon-description-weather {\n    font-size: 2em !important ;\n}\n.material-symbols-outlined\n{\n    font-size: 1.5em!important;\n}\n\n\n.title{\n    font-size: 2em;\n    grid-area: title;\n    text-align: center;\n\n}\n.Init{\n    padding: 1em;\n   \n\n    border-radius: 10px;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    font-size: 1em;\n\n    background-color: var(--main-color-3);\n    color: var(--text-color)\n}\n\n\n\n.Weather-info{\n    padding: 1em;\n    grid-area: weatherInfo;\n\n    border-radius: 10px;\n    display: grid;\n    justify-content: center;\n    grid-row: 1/2;\n       \n    grid-template-columns: 1fr 1fr;\n    grid-template-rows: 0.10fr 2fr;\n    grid-template-areas: \n    \"title title \"\n    \"weatherLeft weatherRight \"\n     ;\n    gap: 1em;\n    font-size: 0.75em;\n\n    background-color: var(--main-color-3);\n    color: var(--text-color)\n}\n\n.Weather-info-left\n{\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: space-around;\n    padding: 5%;\n    border-bottom: solid 3px var(--main-color-3);\n    border-left: solid 2px var(--main-color-4);\n    border-top: solid 2px var(--main-color-3);\n    border-right: solid 2px var(--main-color-3); ;\n    border-radius: 5px;\n    font-size: 1.25em;\n    grid-area: weatherLeft;\n}\n\n.Weather-info-right\n{\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: space-around;\n    padding: 5%;\n\n\n    border-bottom: solid 3px var(--main-color-3);\n    border-left: solid 2px var(--main-color-4);\n    border-top: solid 2px var(--main-color-3);\n    border-right: solid 2px var(--main-color-3); \n    border-radius: 5px;\n    font-size: 1.25em;\n    grid-area: weatherRight;\n\n}\n.weather-detail-right\n{\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    gap: 1.25em;\n    width: 80%;\n}\n\n.Weather-info-right span\n{\n    font-size: 2.25em !important;\n    display: flex;\n    justify-content:left;\n    align-items:center;\n} \n\n.weather-prevision\n{\n    grid-area: weatherPrevision;\n    grid-row: 2/2;\n    \n    display: flex;\n    justify-content: center;\n    align-items: center;\n    background-color: var(--main-color-3);\n    color: var(--text-color)\n}\n.prevision-day\n{\n\n    flex: 1;\n    height: 100%;\n    display: flex;\n    flex-direction: column;\n    justify-content:space-evenly;\n    align-items: center;\n    font-size: 1em;\n    gap: 1em;\n}\n.prevision-description\n{\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n}\n\n.Error\n{\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    color: red;\n    font-size: 0.75em;\n}\n.Error.title{\n    font-size: 2em;\n}\n.Error-Serveur\n{\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    color: red;\n    font-size: 2em;\n}\n\n@media (max-width:500px)\n{\n    #app{\n       padding: 0.5em;\n       gap: 0.5em;\n       grid-template-rows: 1fr 0.5fr;\n       \n    }\n    .title\n    {\n        font-size: 1.5em;\n    }\n    input{\n        height: 1.5em;\n    }\n    button{\n    width: 1.5em;\n    height: 1.5em;\n    }\n    form{\n        margin: 0.25em;\n        gap: 0.25em;\n    }\n\n    .material-symbols-outlined.Icon-description-weather {\n        font-size: 2.5em !important ;\n    }\n    .material-symbols-outlined\n    {\n        font-size: 1em!important;\n    }\n    .Weather-info-left{\n        font-size: 1em;\n    }\n\n    .Weather-info-right span\n    {\n        font-size: 1.75em !important;\n        display: flex;\n        justify-content:left;\n        align-items:center;\n    }\n    \n    .weather-detail-right\n    {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    gap: 0.75em;\n    font-size: 0.75em;\n    width: 80%;\n}\n.prevision-day\n{\n\n    flex: 1;\n    height: 100%;\n    display: flex;\n    flex-direction: column;\n    justify-content:space-evenly;\n    align-items: center;\n    font-size: 0.75em;\n    gap: 1em;\n}\n\n\n}\n\n\n\n\n\n"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/api.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/api.js ***!
+  \*****************************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+/*
+  MIT License http://www.opensource.org/licenses/mit-license.php
+  Author Tobias Koppers @sokra
+*/
+module.exports = function (cssWithMappingToString) {
+  var list = [];
+
+  // return the list of modules as css string
+  list.toString = function toString() {
+    return this.map(function (item) {
+      var content = "";
+      var needLayer = typeof item[5] !== "undefined";
+      if (item[4]) {
+        content += "@supports (".concat(item[4], ") {");
+      }
+      if (item[2]) {
+        content += "@media ".concat(item[2], " {");
+      }
+      if (needLayer) {
+        content += "@layer".concat(item[5].length > 0 ? " ".concat(item[5]) : "", " {");
+      }
+      content += cssWithMappingToString(item);
+      if (needLayer) {
+        content += "}";
+      }
+      if (item[2]) {
+        content += "}";
+      }
+      if (item[4]) {
+        content += "}";
+      }
+      return content;
+    }).join("");
+  };
+
+  // import a list of modules into the list
+  list.i = function i(modules, media, dedupe, supports, layer) {
+    if (typeof modules === "string") {
+      modules = [[null, modules, undefined]];
+    }
+    var alreadyImportedModules = {};
+    if (dedupe) {
+      for (var k = 0; k < this.length; k++) {
+        var id = this[k][0];
+        if (id != null) {
+          alreadyImportedModules[id] = true;
+        }
+      }
+    }
+    for (var _k = 0; _k < modules.length; _k++) {
+      var item = [].concat(modules[_k]);
+      if (dedupe && alreadyImportedModules[item[0]]) {
+        continue;
+      }
+      if (typeof layer !== "undefined") {
+        if (typeof item[5] === "undefined") {
+          item[5] = layer;
+        } else {
+          item[1] = "@layer".concat(item[5].length > 0 ? " ".concat(item[5]) : "", " {").concat(item[1], "}");
+          item[5] = layer;
+        }
+      }
+      if (media) {
+        if (!item[2]) {
+          item[2] = media;
+        } else {
+          item[1] = "@media ".concat(item[2], " {").concat(item[1], "}");
+          item[2] = media;
+        }
+      }
+      if (supports) {
+        if (!item[4]) {
+          item[4] = "".concat(supports);
+        } else {
+          item[1] = "@supports (".concat(item[4], ") {").concat(item[1], "}");
+          item[4] = supports;
+        }
+      }
+      list.push(item);
+    }
+  };
+  return list;
+};
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/getUrl.js":
+/*!********************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/getUrl.js ***!
+  \********************************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+module.exports = function (url, options) {
+  if (!options) {
+    options = {};
+  }
+  if (!url) {
+    return url;
+  }
+  url = String(url.__esModule ? url.default : url);
+
+  // If url is already wrapped in quotes, remove them
+  if (/^['"].*['"]$/.test(url)) {
+    url = url.slice(1, -1);
+  }
+  if (options.hash) {
+    url += options.hash;
+  }
+
+  // Should url be wrapped?
+  // See https://drafts.csswg.org/css-values-3/#urls
+  if (/["'() \t\n]|(%20)/.test(url) || options.needQuotes) {
+    return "\"".concat(url.replace(/"/g, '\\"').replace(/\n/g, "\\n"), "\"");
+  }
+  return url;
+};
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/sourceMaps.js":
+/*!************************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/sourceMaps.js ***!
+  \************************************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+module.exports = function (item) {
+  var content = item[1];
+  var cssMapping = item[3];
+  if (!cssMapping) {
+    return content;
+  }
+  if (typeof btoa === "function") {
+    var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(cssMapping))));
+    var data = "sourceMappingURL=data:application/json;charset=utf-8;base64,".concat(base64);
+    var sourceMapping = "/*# ".concat(data, " */");
+    return [content].concat([sourceMapping]).join("\n");
+  }
+  return [content].join("\n");
+};
+
+/***/ }),
+
 /***/ "./node_modules/cssesc/cssesc.js":
 /*!***************************************!*\
   !*** ./node_modules/cssesc/cssesc.js ***!
@@ -4372,6 +4854,334 @@ module.exports = exports.default;
 
 /***/ }),
 
+/***/ "./src/css/common.css":
+/*!****************************!*\
+  !*** ./src/css/common.css ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/styleDomAPI.js */ "./node_modules/style-loader/dist/runtime/styleDomAPI.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/insertBySelector.js */ "./node_modules/style-loader/dist/runtime/insertBySelector.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/insertStyleElement.js */ "./node_modules/style-loader/dist/runtime/insertStyleElement.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/styleTagTransform.js */ "./node_modules/style-loader/dist/runtime/styleTagTransform.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_common_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../node_modules/css-loader/dist/cjs.js!./common.css */ "./node_modules/css-loader/dist/cjs.js!./src/css/common.css");
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+var options = {};
+
+options.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
+options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
+
+      options.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
+    
+options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
+options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_common_css__WEBPACK_IMPORTED_MODULE_6__["default"], options);
+
+
+
+
+       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_common_css__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_common_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_common_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
+
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
+  \****************************************************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+var stylesInDOM = [];
+function getIndexByIdentifier(identifier) {
+  var result = -1;
+  for (var i = 0; i < stylesInDOM.length; i++) {
+    if (stylesInDOM[i].identifier === identifier) {
+      result = i;
+      break;
+    }
+  }
+  return result;
+}
+function modulesToDom(list, options) {
+  var idCountMap = {};
+  var identifiers = [];
+  for (var i = 0; i < list.length; i++) {
+    var item = list[i];
+    var id = options.base ? item[0] + options.base : item[0];
+    var count = idCountMap[id] || 0;
+    var identifier = "".concat(id, " ").concat(count);
+    idCountMap[id] = count + 1;
+    var indexByIdentifier = getIndexByIdentifier(identifier);
+    var obj = {
+      css: item[1],
+      media: item[2],
+      sourceMap: item[3],
+      supports: item[4],
+      layer: item[5]
+    };
+    if (indexByIdentifier !== -1) {
+      stylesInDOM[indexByIdentifier].references++;
+      stylesInDOM[indexByIdentifier].updater(obj);
+    } else {
+      var updater = addElementStyle(obj, options);
+      options.byIndex = i;
+      stylesInDOM.splice(i, 0, {
+        identifier: identifier,
+        updater: updater,
+        references: 1
+      });
+    }
+    identifiers.push(identifier);
+  }
+  return identifiers;
+}
+function addElementStyle(obj, options) {
+  var api = options.domAPI(options);
+  api.update(obj);
+  var updater = function updater(newObj) {
+    if (newObj) {
+      if (newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap && newObj.supports === obj.supports && newObj.layer === obj.layer) {
+        return;
+      }
+      api.update(obj = newObj);
+    } else {
+      api.remove();
+    }
+  };
+  return updater;
+}
+module.exports = function (list, options) {
+  options = options || {};
+  list = list || [];
+  var lastIdentifiers = modulesToDom(list, options);
+  return function update(newList) {
+    newList = newList || [];
+    for (var i = 0; i < lastIdentifiers.length; i++) {
+      var identifier = lastIdentifiers[i];
+      var index = getIndexByIdentifier(identifier);
+      stylesInDOM[index].references--;
+    }
+    var newLastIdentifiers = modulesToDom(newList, options);
+    for (var _i = 0; _i < lastIdentifiers.length; _i++) {
+      var _identifier = lastIdentifiers[_i];
+      var _index = getIndexByIdentifier(_identifier);
+      if (stylesInDOM[_index].references === 0) {
+        stylesInDOM[_index].updater();
+        stylesInDOM.splice(_index, 1);
+      }
+    }
+    lastIdentifiers = newLastIdentifiers;
+  };
+};
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/runtime/insertBySelector.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/insertBySelector.js ***!
+  \********************************************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+var memo = {};
+
+/* istanbul ignore next  */
+function getTarget(target) {
+  if (typeof memo[target] === "undefined") {
+    var styleTarget = document.querySelector(target);
+
+    // Special case to return head of iframe instead of iframe itself
+    if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {
+      try {
+        // This will throw an exception if access to iframe is blocked
+        // due to cross-origin restrictions
+        styleTarget = styleTarget.contentDocument.head;
+      } catch (e) {
+        // istanbul ignore next
+        styleTarget = null;
+      }
+    }
+    memo[target] = styleTarget;
+  }
+  return memo[target];
+}
+
+/* istanbul ignore next  */
+function insertBySelector(insert, style) {
+  var target = getTarget(insert);
+  if (!target) {
+    throw new Error("Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid.");
+  }
+  target.appendChild(style);
+}
+module.exports = insertBySelector;
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/runtime/insertStyleElement.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/insertStyleElement.js ***!
+  \**********************************************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+/* istanbul ignore next  */
+function insertStyleElement(options) {
+  var element = document.createElement("style");
+  options.setAttributes(element, options.attributes);
+  options.insert(element, options.options);
+  return element;
+}
+module.exports = insertStyleElement;
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js ***!
+  \**********************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+
+/* istanbul ignore next  */
+function setAttributesWithoutAttributes(styleElement) {
+  var nonce =  true ? __webpack_require__.nc : 0;
+  if (nonce) {
+    styleElement.setAttribute("nonce", nonce);
+  }
+}
+module.exports = setAttributesWithoutAttributes;
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/runtime/styleDomAPI.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/styleDomAPI.js ***!
+  \***************************************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+/* istanbul ignore next  */
+function apply(styleElement, options, obj) {
+  var css = "";
+  if (obj.supports) {
+    css += "@supports (".concat(obj.supports, ") {");
+  }
+  if (obj.media) {
+    css += "@media ".concat(obj.media, " {");
+  }
+  var needLayer = typeof obj.layer !== "undefined";
+  if (needLayer) {
+    css += "@layer".concat(obj.layer.length > 0 ? " ".concat(obj.layer) : "", " {");
+  }
+  css += obj.css;
+  if (needLayer) {
+    css += "}";
+  }
+  if (obj.media) {
+    css += "}";
+  }
+  if (obj.supports) {
+    css += "}";
+  }
+  var sourceMap = obj.sourceMap;
+  if (sourceMap && typeof btoa !== "undefined") {
+    css += "\n/*# sourceMappingURL=data:application/json;base64,".concat(btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))), " */");
+  }
+
+  // For old IE
+  /* istanbul ignore if  */
+  options.styleTagTransform(css, styleElement, options.options);
+}
+function removeStyleElement(styleElement) {
+  // istanbul ignore if
+  if (styleElement.parentNode === null) {
+    return false;
+  }
+  styleElement.parentNode.removeChild(styleElement);
+}
+
+/* istanbul ignore next  */
+function domAPI(options) {
+  if (typeof document === "undefined") {
+    return {
+      update: function update() {},
+      remove: function remove() {}
+    };
+  }
+  var styleElement = options.insertStyleElement(options);
+  return {
+    update: function update(obj) {
+      apply(styleElement, options, obj);
+    },
+    remove: function remove() {
+      removeStyleElement(styleElement);
+    }
+  };
+}
+module.exports = domAPI;
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/runtime/styleTagTransform.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/styleTagTransform.js ***!
+  \*********************************************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+/* istanbul ignore next  */
+function styleTagTransform(css, styleElement) {
+  if (styleElement.styleSheet) {
+    styleElement.styleSheet.cssText = css;
+  } else {
+    while (styleElement.firstChild) {
+      styleElement.removeChild(styleElement.firstChild);
+    }
+    styleElement.appendChild(document.createTextNode(css));
+  }
+}
+module.exports = styleTagTransform;
+
+/***/ }),
+
 /***/ "./node_modules/util-deprecate/browser.js":
 /*!************************************************!*\
   !*** ./node_modules/util-deprecate/browser.js ***!
@@ -4471,7 +5281,7 @@ function apiFunction(city)
     const apiBaseUrl = 'http://api.weatherstack.com/current';
     const accessKey = '40982dd51b2225157ed02cbde6036642'; 
     const url = `${proxyUrl}${apiBaseUrl}?access_key=${accessKey}&query=${param}`;
-    console.log(url)
+   
     return fetch( url)
     .then(response => {
         if(response.status=== 429)
@@ -4522,11 +5332,11 @@ function apiFunctionWithPrevisionData(city)
     const apiBaseUrl = "http://api.openweathermap.org/data/2.5/forecast?q=";
     const accessKey = '8e42f9ecec558155265d785c89d9fba0&units=metric';
     const url = `${proxyUrl}${apiBaseUrl}${param}&appid=${accessKey}`;
-    console.log(url)
+    
 
     return fetch(url)
     .then(response=>{
-        console.log(response)
+       
         if (!response.ok) {
             throw new Error('Réponse réseau non ok');
             return -1
@@ -4984,6 +5794,17 @@ function createForm(element)
 
 /***/ }),
 
+/***/ "./src/Img/d34d568ad360338ba88337d41c23242d.jpg":
+/*!******************************************************!*\
+  !*** ./src/Img/d34d568ad360338ba88337d41c23242d.jpg ***!
+  \******************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "75206e733fda64238af9.jpg";
+
+/***/ }),
+
 /***/ "./node_modules/estraverse/package.json":
 /*!**********************************************!*\
   !*** ./node_modules/estraverse/package.json ***!
@@ -5009,7 +5830,7 @@ module.exports = JSON.parse('{"name":"estraverse","description":"ECMAScript JS A
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			// no module.id needed
+/******/ 			id: moduleId,
 /******/ 			// no module.loaded needed
 /******/ 			exports: {}
 /******/ 		};
@@ -5020,6 +5841,9 @@ module.exports = JSON.parse('{"name":"estraverse","description":"ECMAScript JS A
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
+/******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
 /******/ 	
 /************************************************************************/
 /******/ 	/* webpack/runtime/compat get default export */
@@ -5074,6 +5898,60 @@ module.exports = JSON.parse('{"name":"estraverse","description":"ECMAScript JS A
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src;
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) {
+/******/ 					var i = scripts.length - 1;
+/******/ 					while (i > -1 && !scriptUrl) scriptUrl = scripts[i--].src;
+/******/ 				}
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		__webpack_require__.b = document.baseURI || self.location.href;
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			"main": 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		// no on chunks loaded
+/******/ 		
+/******/ 		// no jsonp function
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/nonce */
+/******/ 	(() => {
+/******/ 		__webpack_require__.nc = undefined;
+/******/ 	})();
+/******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
@@ -5088,8 +5966,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _component_cp_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./component/cp-container */ "./src/component/cp-container.js");
 /* harmony import */ var _component_cp_weatherPrevision__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./component/cp-weatherPrevision */ "./src/component/cp-weatherPrevision.js");
 /* harmony import */ var _component_cp_createElementWithText__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./component/cp-createElementWithText */ "./src/component/cp-createElementWithText.js");
+/* harmony import */ var _css_common_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./css/common.css */ "./src/css/common.css");
 /****** IMPORT ******/
-
 
 
 
