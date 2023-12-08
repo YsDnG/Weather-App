@@ -1,5 +1,6 @@
 import Container from './cp-container'
 import createElementWithText from './cp-createElementWithText'
+import { iconApiResponseOpen } from '../api-function/icon-api-response'
 
 
 function createWeatherPrevision(data)
@@ -64,8 +65,16 @@ function tempForDay(data,day,element)
 function descriptionForDay(data,day,element)
 {
     let description = data.list[day].weather[0].description
-    createElementWithText("h3",description,element)
-
+    const previsionDescription = createElementWithText("h3",description,element,"prevision-description")
+    
+    if(iconApiResponseOpen(description))
+            {
+                
+                const inconDescription = createElementWithText('span',iconApiResponseOpen(description),previsionDescription,"material-symbols-outlined")
+                inconDescription.classList.add("Icon-description-weather")
+            }
 }
+
+
 
 export default createWeatherPrevision;

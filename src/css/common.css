@@ -12,7 +12,7 @@
     --main-color-2: rgb(0,67,255);
     --main-color-3: rgb(0,41,187,0.5);
     --main-color-4: rgb(0,15,92);
-    --text-color: rgb(2,0,33)
+    --text-color: rgb(80,255,255)
 
 }
 
@@ -97,7 +97,7 @@ input::placeholder
     gap: 1em;
     font-size: 0.75em;
 
-    background-color: var(--main-color-1);
+    background-color: var(--main-color-3);
     color: var(--text-color)
 }
 
@@ -160,7 +160,7 @@ input::placeholder
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--main-color-1);
+    background-color: var(--main-color-3);
     color: var(--text-color)
 }
 .prevision-day
@@ -175,6 +175,13 @@ input::placeholder
     font-size: 1em;
     gap: 1em;
 }
+.prevision-description
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 .Error
 {
@@ -185,6 +192,14 @@ input::placeholder
     font-size: 0.75em;
 }
 .Error.title{
+    font-size: 2em;
+}
+.Error-Serveur
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
     font-size: 2em;
 }
 

@@ -2,7 +2,7 @@
 import { VisitorOption } from 'estraverse';
 import Container from './cp-container'
 import createElementWithText from './cp-createElementWithText.js';
-import iconApiResponse from '../api-function/icon-api-response';
+import {iconApiResponseWeather} from '../api-function/icon-api-response';
 import createForm from './cp.form';
 import { string } from 'postcss-selector-parser';
 
@@ -47,9 +47,9 @@ function createWeatherInfo(weather_Info)
             weatherInfoLeft.appendChild(date)
             weatherInfoLeft.appendChild(temperature)
         /**/
-            if(iconApiResponse(weather_Info.weatherDescription))
+            if(iconApiResponseWeather(weather_Info.weatherDescription))
             {
-                const inconDescription = createElementWithText('span',iconApiResponse(weather_Info.weatherDescription),weatherInfoLeft,"material-symbols-outlined")
+                const inconDescription = createElementWithText('span',iconApiResponseWeather(weather_Info.weatherDescription),weatherInfoLeft,"material-symbols-outlined")
                 inconDescription.classList.add("Icon-description-weather")
             }
 

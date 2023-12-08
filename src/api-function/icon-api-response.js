@@ -1,6 +1,6 @@
 
 
-function iconApiResponse(weather_descriptions)
+function iconApiResponseWeather(weather_descriptions)
 {
     const weatherIcon ={
         "Sunny": "sunny",
@@ -26,4 +26,34 @@ function iconApiResponse(weather_descriptions)
     return weatherIcon[weather_descriptions]
 }
 
-export default iconApiResponse;
+function iconApiResponseOpen(weather_descriptions){
+
+
+    const weatherIcon={
+        "clear sky": "sunny",
+        "partly cloudy": "partly_cloudy_day",
+        "broken clouds": "partly_cloudy_day",
+        "cloudy" :"cloud",
+        "overcast" :"cloud",
+        "overcast clouds" :"cloud",
+        "misty" :"foggy",
+        "mist":"foggy",
+        "fopggy":"foggy",
+        "scattered clouds":"partly_cloudy_day",
+        "overcast":"foggy",
+        "light rain":"rainy",
+        "moderate rain":"rainy",
+        "heavy rain":"rainy",
+        "shower" : "rainy_light",
+        "thunderstorm":"thunderstorm",
+        "light snow": "weather_snow",
+        "moderate snow":"weather_snow",
+        "heavy snow":"weather_snow",
+        "hail": "wheater_hail",
+        "windy": "wind_power",
+        "clear SKy":"sunny",
+    }
+    return weatherIcon[weather_descriptions]
+}
+
+export {iconApiResponseWeather,iconApiResponseOpen} ;

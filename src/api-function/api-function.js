@@ -1,15 +1,25 @@
-
-function apiFunction(param)
+import createElementWithText from "../component/cp-createElementWithText";
+function apiFunction(city)
 {
     let weather_Info;
-   
-    const url = param ? `http://localhost:3000/weather?api=weatherstack&query=${param}`:`http://localhost:3000/weather?api=weatherstack `
+    const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+    const param = city ? city : "Clermont-ferrand"; 
+    const apiBaseUrl = 'http://api.weatherstack.com/current';
+    const accessKey = '40982dd51b2225157ed02cbde6036642'; 
+    const url = `${proxyUrl}${apiBaseUrl}?access_key=${accessKey}&query=${param}`;
+    console.log(url)
     return fetch( url)
     .then(response => {
         
+        if(response.status=== 429)
+        {
+            createElementWithText('h1',"Server request full please retry in 1hour",null,"Error")
+            document.getElementById('app').classList.add('Error-Serveur');
+        }
         if (!response.ok) {
             throw new Error('Réponse réseau non ok');
           }
+          document.getElementById('app').classList.remove('Error-Serveur');
           return response.json();
     })
     .then (data =>{
@@ -43,11 +53,19 @@ function apiFunction(param)
     })
 }
 
-function apiFunctionWithPrevisionData(param)
+function apiFunctionWithPrevisionData(city)
 {
-    const url = param ? `http://localhost:3000/weather?api=openweather&query=${param}`:"http://localhost:3000/weather?api=openweather" 
+
+    const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+    const param = city ? city : "Clermont-ferrand";
+    const apiBaseUrl = "http://api.openweathermap.org/data/2.5/forecast?q=";
+    const accessKey = '8e42f9ecec558155265d785c89d9fba0&units=metric';
+    const url = `${proxyUrl}${apiBaseUrl}${param}&appid=${accessKey}`;
+    console.log(url)
+
     return fetch(url)
     .then(response=>{
+        console.log(response)
         if (!response.ok) {
             throw new Error('Réponse réseau non ok');
             return -1

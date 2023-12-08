@@ -21,8 +21,8 @@ function createForm(element)
         document.getElementById('app').innerHTML=''
         let formData= new FormData(e.target)
                 
-        apiFunction(formData.get('city'))
-            .then(data => {
+        apiFunction(formData.get('city'))        
+        .then(data => {
                 console.log(data)
                 if(data === -1)
                 {
@@ -43,7 +43,9 @@ function createForm(element)
                 console.error('Erreur:',error)
                 throw error;
             })
+        
         apiFunctionWithPrevisionData(formData.get('city'))
+
             .then(data=>{
     
                 createWeatherPrevision(data)

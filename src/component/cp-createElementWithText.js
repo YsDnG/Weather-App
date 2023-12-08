@@ -5,7 +5,6 @@ function createElementWithText(balise,text,container,className)
    const element= document.createElement(balise)
    element.innerText= text
 
-
     if(className)
         element.classList.add(className)
 
