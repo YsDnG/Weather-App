@@ -7,15 +7,11 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
-  devServer:{
-    proxy:{
-      '/api':'http://localhos:3000'
-    }
-  },
+
    module: {
     rules: [
       {
-        test: /\.css$/, // Utilisation de loaders pour les fichiers CSS
+        test: /\.css$/, 
         use: ['style-loader', 'css-loader'],
       },
       {

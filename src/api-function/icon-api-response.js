@@ -21,6 +21,7 @@ function iconApiResponseWeather(weather_descriptions)
         "Hail": "wheater_hail",
         "Windy": "wind_power",
         "Clear SKy":"sunny",
+        "Light Drizzle And Rain" : "foggy "
     }
 
     return weatherIcon[weather_descriptions]
@@ -46,9 +47,9 @@ function iconApiResponseOpen(weather_descriptions){
         "heavy rain":"rainy",
         "shower" : "rainy_light",
         "thunderstorm":"thunderstorm",
-        "light snow": "weather_snow",
-        "moderate snow":"weather_snow",
-        "heavy snow":"weather_snow",
+        "light snow": "weather_snowy",
+        "moderate snow":"weather_snowy",
+        "heavy snow":"weather_snowy",
         "hail": "wheater_hail",
         "windy": "wind_power",
         "clear SKy":"sunny",

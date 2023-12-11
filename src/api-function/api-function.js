@@ -5,9 +5,9 @@ function apiFunction(city)
     const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
     const param = city ? city : "Clermont-ferrand"; 
     const apiBaseUrl = 'http://api.weatherstack.com/current';
-    const accessKey = '40982dd51b2225157ed02cbde6036642'; 
+    const accessKey = 'f3c0f9194f9c48c032047c6f3b0f7bd9'; 
     const url = `${proxyUrl}${apiBaseUrl}?access_key=${accessKey}&query=${param}`;
-    console.log(url)
+   
     return fetch( url)
     .then(response => {
         if(response.status=== 429)
@@ -58,11 +58,11 @@ function apiFunctionWithPrevisionData(city)
     const apiBaseUrl = "http://api.openweathermap.org/data/2.5/forecast?q=";
     const accessKey = '8e42f9ecec558155265d785c89d9fba0&units=metric';
     const url = `${proxyUrl}${apiBaseUrl}${param}&appid=${accessKey}`;
-    console.log(url)
+    
 
     return fetch(url)
     .then(response=>{
-        console.log(response)
+       
         if (!response.ok) {
             throw new Error('Réponse réseau non ok');
             return -1
