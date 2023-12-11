@@ -40,7 +40,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `*,*::before,*::after{
     --main-color-2: rgb(0,67,255);
     --main-color-3: rgb(0,41,187,0.5);
     --main-color-4: rgb(0,15,92);
-    --text-color: rgb(80,255,255)
+    --text-color: rgb(5, 35, 80);
 
 }
 
@@ -54,7 +54,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `*,*::before,*::after{
     background-position: center 35%;
     color: wheat;
     display: grid;
-    grid-template-rows: 50vh 20vh;
+    grid-template-rows: 50vh 30vh;
     grid-template-columns: 1fr;
     grid-template-areas: "weatherInfo weatherInfo"
                 "weatherPrevision weatherPrevision";
@@ -106,22 +106,6 @@ input::placeholder
     text-align: center;
 
 }
-.Init{
-    padding: 1em;
-   
-
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 1em;
-
-    background-color: var(--main-color-3);
-    color: var(--text-color)
-}
-
-
 
 .Weather-info{
     padding: 1em;
@@ -141,7 +125,7 @@ input::placeholder
     gap: 1em;
     font-size: 0.75em;
 
-    background-color: var(--main-color-3);
+    background-color: var(--main-color-1);
     color: var(--text-color)
 }
 
@@ -200,16 +184,45 @@ input::placeholder
 {
     grid-area: weatherPrevision;
     grid-row: 2/2;
+    border-radius: 10px;
     
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--main-color-3);
-    color: var(--text-color)
+    display: grid;
+    grid-template-rows: 15% 85%;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-areas:
+    "previsionType previsionType previsionType previsionType"
+    "day1 day2 day3 day4 ";
+    padding: 2em;
+    gap: 0.5em;
+    background-color: var(--main-color-1);
+    color: var(--text-color);
+
 }
+
+
+.Prevision-type
+{
+    grid-area: previsionType;
+    display: flex;
+    align-items: center;
+
+}
+.btn-prevision-type{
+    border-radius: 5px;
+    width: 5em;
+    font-size: 1em;
+    padding: 1em;
+    background-color: var(--main-color-1);
+    color: var(--text-color);
+}
+
+.focus
+{
+    border: solid 2px var(--text-color);
+}
+
 .prevision-day
 {
-
     flex: 1;
     height: 100%;
     display: flex;
@@ -218,13 +231,22 @@ input::placeholder
     align-items: center;
     font-size: 1em;
     gap: 1em;
+    
 }
+
+
+.day-1{grid-area: day1; border: 1px solid var(--text-color);}
+.day-2{grid-area: day2; border: 1px solid var(--text-color);}
+.day-3{grid-area: day3; border: 1px solid var(--text-color);}
+.day-4{grid-area: day4; border: 1px solid var(--text-color);}
+
 .prevision-description
 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-top: 1px solid var(--text-color);
 }
 
 .Error
@@ -238,22 +260,17 @@ input::placeholder
 .Error.title{
     font-size: 2em;
 }
-.Error-Serveur
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: red;
-    font-size: 2em;
-}
+
 
 @media (max-width:500px)
 {
     #app{
        padding: 0.5em;
        gap: 0.5em;
-       grid-template-rows: 1fr 0.5fr;
-       
+       grid-template-rows: 60% 40%;
+    }
+    .Weather-info{
+        grid-template-columns: repeat(2,min(150px,1fr));
     }
     .title
     {
@@ -261,8 +278,6 @@ input::placeholder
     }
     input{
         height: 1.5em;
-        width: 100%;
-        font-size: 1em;
     }
     button{
     width: 1.5em;
@@ -280,19 +295,8 @@ input::placeholder
     {
         font-size: 1em!important;
     }
-
-    .Weather-info{
-        grid-template-columns: 50% 50%;
-    }
-
     .Weather-info-left{
-        font-size: 0.75em;
-        flex: 1;
-    }
-    .Weather-info-right{
-            font-size: 1em;
-            justify-content: space-around;
-            
+        font-size: 1em;
     }
 
     .Weather-info-right span
@@ -301,7 +305,6 @@ input::placeholder
         display: flex;
         justify-content:left;
         align-items:center;
-        width: 100%
     }
     
     .weather-detail-right
@@ -312,7 +315,10 @@ input::placeholder
     gap: 0.75em;
     font-size: 0.75em;
     width: 80%;
-}
+    }
+    .weather-prevision{
+        font-size: .75em;
+    }
 .prevision-day
 {
 
@@ -320,10 +326,10 @@ input::placeholder
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content:space-evenly;
+    justify-content:center;
     align-items: center;
-    font-size: 0.75em;
-    gap: 1em;
+    font-size: 1em;
+    
 }
 
 
@@ -333,7 +339,7 @@ input::placeholder
 
 
 
-`, "",{"version":3,"sources":["webpack://./src/css/common.css"],"names":[],"mappings":"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","sourcesContent":["*,*::before,*::after{\n    box-sizing: border-box;\n    padding: 0;\n    margin: 0;\n    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;\n\n}\n\n/**** CSS variables *****/\n:root{\n    --main-color-1: rgba(0,174,255,0.5);\n    --main-color-2: rgb(0,67,255);\n    --main-color-3: rgb(0,41,187,0.5);\n    --main-color-4: rgb(0,15,92);\n    --text-color: rgb(80,255,255)\n\n}\n\n#app{  \n    height: 100vh;\n    width: 100vw;\n    padding: 2em;\n    background-image: url('../Img/d34d568ad360338ba88337d41c23242d.jpg');\n    background-repeat: no-repeat;\n    background-size:cover;\n    background-position: center 35%;\n    color: wheat;\n    display: grid;\n    grid-template-rows: 50vh 20vh;\n    grid-template-columns: 1fr;\n    grid-template-areas: \"weatherInfo weatherInfo\"\n                \"weatherPrevision weatherPrevision\";\n    gap: 2em;\n    justify-content: center;\n    \n}\nbutton{\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    background-color: var(--main-color-1);\n    color: var(--main-color-4);\n    width: 2em;\n    height: 2em;\n\n    border: 1px dotted var(--main-color-3)\n}\n\nform{\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    gap:0.3em\n}\ninput{\n    height: 2em;\n    background-color: var(--main-color-1);\n    color: black;\n    border: 1px dotted var(--main-color-3)\n}\ninput::placeholder\n{\n    text-align: center;\n    color: var(--main-color-4);\n}\n.material-symbols-outlined.Icon-description-weather {\n    font-size: 2em !important ;\n}\n.material-symbols-outlined\n{\n    font-size: 1.5em!important;\n}\n\n\n.title{\n    font-size: 2em;\n    grid-area: title;\n    text-align: center;\n\n}\n.Init{\n    padding: 1em;\n   \n\n    border-radius: 10px;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    font-size: 1em;\n\n    background-color: var(--main-color-3);\n    color: var(--text-color)\n}\n\n\n\n.Weather-info{\n    padding: 1em;\n    grid-area: weatherInfo;\n\n    border-radius: 10px;\n    display: grid;\n    justify-content: center;\n    grid-row: 1/2;\n       \n    grid-template-columns: 1fr 1fr;\n    grid-template-rows: 0.10fr 2fr;\n    grid-template-areas: \n    \"title title \"\n    \"weatherLeft weatherRight \"\n     ;\n    gap: 1em;\n    font-size: 0.75em;\n\n    background-color: var(--main-color-3);\n    color: var(--text-color)\n}\n\n.Weather-info-left\n{\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: space-around;\n    padding: 5%;\n    border-bottom: solid 3px var(--main-color-3);\n    border-left: solid 2px var(--main-color-4);\n    border-top: solid 2px var(--main-color-3);\n    border-right: solid 2px var(--main-color-3); ;\n    border-radius: 5px;\n    font-size: 1.25em;\n    grid-area: weatherLeft;\n}\n\n.Weather-info-right\n{\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: space-around;\n    padding: 5%;\n\n\n    border-bottom: solid 3px var(--main-color-3);\n    border-left: solid 2px var(--main-color-4);\n    border-top: solid 2px var(--main-color-3);\n    border-right: solid 2px var(--main-color-3); \n    border-radius: 5px;\n    font-size: 1.25em;\n    grid-area: weatherRight;\n\n}\n.weather-detail-right\n{\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    gap: 1.25em;\n    width: 80%;\n}\n\n.Weather-info-right span\n{\n    font-size: 2.25em !important;\n    display: flex;\n    justify-content:left;\n    align-items:center;\n} \n\n.weather-prevision\n{\n    grid-area: weatherPrevision;\n    grid-row: 2/2;\n    \n    display: flex;\n    justify-content: center;\n    align-items: center;\n    background-color: var(--main-color-3);\n    color: var(--text-color)\n}\n.prevision-day\n{\n\n    flex: 1;\n    height: 100%;\n    display: flex;\n    flex-direction: column;\n    justify-content:space-evenly;\n    align-items: center;\n    font-size: 1em;\n    gap: 1em;\n}\n.prevision-description\n{\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n}\n\n.Error\n{\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    color: red;\n    font-size: 0.75em;\n}\n.Error.title{\n    font-size: 2em;\n}\n.Error-Serveur\n{\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    color: red;\n    font-size: 2em;\n}\n\n@media (max-width:500px)\n{\n    #app{\n       padding: 0.5em;\n       gap: 0.5em;\n       grid-template-rows: 1fr 0.5fr;\n       \n    }\n    .title\n    {\n        font-size: 1.5em;\n    }\n    input{\n        height: 1.5em;\n        width: 100%;\n        font-size: 1em;\n    }\n    button{\n    width: 1.5em;\n    height: 1.5em;\n    }\n    form{\n        margin: 0.25em;\n        gap: 0.25em;\n    }\n\n    .material-symbols-outlined.Icon-description-weather {\n        font-size: 2.5em !important ;\n    }\n    .material-symbols-outlined\n    {\n        font-size: 1em!important;\n    }\n\n    .Weather-info{\n        grid-template-columns: 50% 50%;\n    }\n\n    .Weather-info-left{\n        font-size: 0.75em;\n        flex: 1;\n    }\n    .Weather-info-right{\n            font-size: 1em;\n            justify-content: space-around;\n            \n    }\n\n    .Weather-info-right span\n    {\n        font-size: 1.75em !important;\n        display: flex;\n        justify-content:left;\n        align-items:center;\n        width: 100%\n    }\n    \n    .weather-detail-right\n    {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    gap: 0.75em;\n    font-size: 0.75em;\n    width: 80%;\n}\n.prevision-day\n{\n\n    flex: 1;\n    height: 100%;\n    display: flex;\n    flex-direction: column;\n    justify-content:space-evenly;\n    align-items: center;\n    font-size: 0.75em;\n    gap: 1em;\n}\n\n\n}\n\n\n\n\n\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/css/common.css"],"names":[],"mappings":"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","sourcesContent":["*,*::before,*::after{\n    box-sizing: border-box;\n    padding: 0;\n    margin: 0;\n    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;\n\n}\n\n/**** CSS variables *****/\n:root{\n    --main-color-1: rgba(0,174,255,0.5);\n    --main-color-2: rgb(0,67,255);\n    --main-color-3: rgb(0,41,187,0.5);\n    --main-color-4: rgb(0,15,92);\n    --text-color: rgb(5, 35, 80);\n\n}\n\n#app{  \n    height: 100vh;\n    width: 100vw;\n    padding: 2em;\n    background-image: url('../Img/d34d568ad360338ba88337d41c23242d.jpg');\n    background-repeat: no-repeat;\n    background-size:cover;\n    background-position: center 35%;\n    color: wheat;\n    display: grid;\n    grid-template-rows: 50vh 30vh;\n    grid-template-columns: 1fr;\n    grid-template-areas: \"weatherInfo weatherInfo\"\n                \"weatherPrevision weatherPrevision\";\n    gap: 2em;\n    justify-content: center;\n    \n}\nbutton{\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    background-color: var(--main-color-1);\n    color: var(--main-color-4);\n    width: 2em;\n    height: 2em;\n\n    border: 1px dotted var(--main-color-3)\n}\n\nform{\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    gap:0.3em\n}\ninput{\n    height: 2em;\n    background-color: var(--main-color-1);\n    color: black;\n    border: 1px dotted var(--main-color-3)\n}\ninput::placeholder\n{\n    text-align: center;\n    color: var(--main-color-4);\n}\n.material-symbols-outlined.Icon-description-weather {\n    font-size: 2em !important ;\n}\n.material-symbols-outlined\n{\n    font-size: 1.5em!important;\n}\n\n\n.title{\n    font-size: 2em;\n    grid-area: title;\n    text-align: center;\n\n}\n\n.Weather-info{\n    padding: 1em;\n    grid-area: weatherInfo;\n\n    border-radius: 10px;\n    display: grid;\n    justify-content: center;\n    grid-row: 1/2;\n       \n    grid-template-columns: 1fr 1fr;\n    grid-template-rows: 0.10fr 2fr;\n    grid-template-areas: \n    \"title title \"\n    \"weatherLeft weatherRight \"\n     ;\n    gap: 1em;\n    font-size: 0.75em;\n\n    background-color: var(--main-color-1);\n    color: var(--text-color)\n}\n\n.Weather-info-left\n{\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: space-around;\n    padding: 5%;\n    border-bottom: solid 3px var(--main-color-3);\n    border-left: solid 2px var(--main-color-4);\n    border-top: solid 2px var(--main-color-3);\n    border-right: solid 2px var(--main-color-3); ;\n    border-radius: 5px;\n    font-size: 1.25em;\n    grid-area: weatherLeft;\n}\n\n.Weather-info-right\n{\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: space-around;\n    padding: 5%;\n\n\n    border-bottom: solid 3px var(--main-color-3);\n    border-left: solid 2px var(--main-color-4);\n    border-top: solid 2px var(--main-color-3);\n    border-right: solid 2px var(--main-color-3); \n    border-radius: 5px;\n    font-size: 1.25em;\n    grid-area: weatherRight;\n\n}\n.weather-detail-right\n{\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    gap: 1.25em;\n    width: 80%;\n}\n\n.Weather-info-right span\n{\n    font-size: 2.25em !important;\n    display: flex;\n    justify-content:left;\n    align-items:center;\n} \n\n.weather-prevision\n{\n    grid-area: weatherPrevision;\n    grid-row: 2/2;\n    border-radius: 10px;\n    \n    display: grid;\n    grid-template-rows: 15% 85%;\n    grid-template-columns: repeat(4,1fr);\n    grid-template-areas:\n    \"previsionType previsionType previsionType previsionType\"\n    \"day1 day2 day3 day4 \";\n    padding: 2em;\n    gap: 0.5em;\n    background-color: var(--main-color-1);\n    color: var(--text-color);\n\n}\n\n\n.Prevision-type\n{\n    grid-area: previsionType;\n    display: flex;\n    align-items: center;\n\n}\n.btn-prevision-type{\n    border-radius: 5px;\n    width: 5em;\n    font-size: 1em;\n    padding: 1em;\n    background-color: var(--main-color-1);\n    color: var(--text-color);\n}\n\n.focus\n{\n    border: solid 2px var(--text-color);\n}\n\n.prevision-day\n{\n    flex: 1;\n    height: 100%;\n    display: flex;\n    flex-direction: column;\n    justify-content:space-evenly;\n    align-items: center;\n    font-size: 1em;\n    gap: 1em;\n    \n}\n\n\n.day-1{grid-area: day1; border: 1px solid var(--text-color);}\n.day-2{grid-area: day2; border: 1px solid var(--text-color);}\n.day-3{grid-area: day3; border: 1px solid var(--text-color);}\n.day-4{grid-area: day4; border: 1px solid var(--text-color);}\n\n.prevision-description\n{\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    border-top: 1px solid var(--text-color);\n}\n\n.Error\n{\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    color: red;\n    font-size: 0.75em;\n}\n.Error.title{\n    font-size: 2em;\n}\n\n\n@media (max-width:500px)\n{\n    #app{\n       padding: 0.5em;\n       gap: 0.5em;\n       grid-template-rows: 60% 40%;\n    }\n    .Weather-info{\n        grid-template-columns: repeat(2,min(150px,1fr));\n    }\n    .title\n    {\n        font-size: 1.5em;\n    }\n    input{\n        height: 1.5em;\n    }\n    button{\n    width: 1.5em;\n    height: 1.5em;\n    }\n    form{\n        margin: 0.25em;\n        gap: 0.25em;\n    }\n\n    .material-symbols-outlined.Icon-description-weather {\n        font-size: 2.5em !important ;\n    }\n    .material-symbols-outlined\n    {\n        font-size: 1em!important;\n    }\n    .Weather-info-left{\n        font-size: 1em;\n    }\n\n    .Weather-info-right span\n    {\n        font-size: 1.75em !important;\n        display: flex;\n        justify-content:left;\n        align-items:center;\n    }\n    \n    .weather-detail-right\n    {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    gap: 0.75em;\n    font-size: 0.75em;\n    width: 80%;\n    }\n    .weather-prevision{\n        font-size: .75em;\n    }\n.prevision-day\n{\n\n    flex: 1;\n    height: 100%;\n    display: flex;\n    flex-direction: column;\n    justify-content:center;\n    align-items: center;\n    font-size: 1em;\n    \n}\n\n\n}\n\n\n\n\n\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -5293,7 +5299,7 @@ function apiFunction(city)
     const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
     const param = city ? city : "Clermont-ferrand"; 
     const apiBaseUrl = 'http://api.weatherstack.com/current';
-    const accessKey = '40982dd51b2225157ed02cbde6036642'; 
+    const accessKey = 'f3c0f9194f9c48c032047c6f3b0f7bd9'; 
     const url = `${proxyUrl}${apiBaseUrl}?access_key=${accessKey}&query=${param}`;
    
     return fetch( url)
@@ -5403,6 +5409,7 @@ function iconApiResponseWeather(weather_descriptions)
         "Hail": "wheater_hail",
         "Windy": "wind_power",
         "Clear SKy":"sunny",
+        "Light Drizzle And Rain" : "foggy "
     }
 
     return weatherIcon[weather_descriptions]
@@ -5428,9 +5435,9 @@ function iconApiResponseOpen(weather_descriptions){
         "heavy rain":"rainy",
         "shower" : "rainy_light",
         "thunderstorm":"thunderstorm",
-        "light snow": "weather_snow",
-        "moderate snow":"weather_snow",
-        "heavy snow":"weather_snow",
+        "light snow": "weather_snowy",
+        "moderate snow":"weather_snowy",
+        "heavy snow":"weather_snowy",
         "hail": "wheater_hail",
         "windy": "wind_power",
         "clear SKy":"sunny",
@@ -5649,64 +5656,154 @@ __webpack_require__.r(__webpack_exports__);
 function createWeatherPrevision(data)
 {
 
-    console.log(data)
-    const dayafter = 8
+    
+    
     const weatherPrevision = (0,_cp_container__WEBPACK_IMPORTED_MODULE_0__["default"])("weather-prevision")
-    const day1 = (0,_cp_container__WEBPACK_IMPORTED_MODULE_0__["default"])('prevision-day',weatherPrevision)
-    const day2 = (0,_cp_container__WEBPACK_IMPORTED_MODULE_0__["default"])('prevision-day',weatherPrevision)
-    const day3 = (0,_cp_container__WEBPACK_IMPORTED_MODULE_0__["default"])('prevision-day',weatherPrevision)
-    const day4 = (0,_cp_container__WEBPACK_IMPORTED_MODULE_0__["default"])('prevision-day',weatherPrevision)
 
-/*prevision day 1*/
-    //date
-    formatedDate(data,dayafter,day1)
-    //temp
-    tempForDay(data,dayafter,day1)
-    //description
-    descriptionForDay(data,dayafter,day1)
-/*prevision day 2*/
-    //date
-    formatedDate(data,dayafter*2,day2)
-    //temp
-    tempForDay(data,dayafter*2,day2)
-    //description
-    descriptionForDay(data,dayafter*2,day2)
+    const prevision1 = (0,_cp_container__WEBPACK_IMPORTED_MODULE_0__["default"])('prevision-day',weatherPrevision)
+    const prevision2 = (0,_cp_container__WEBPACK_IMPORTED_MODULE_0__["default"])('prevision-day',weatherPrevision)
+    const prevision3 = (0,_cp_container__WEBPACK_IMPORTED_MODULE_0__["default"])('prevision-day',weatherPrevision)
+    const prevision4 = (0,_cp_container__WEBPACK_IMPORTED_MODULE_0__["default"])('prevision-day',weatherPrevision)
 
-/*prevision day 3*/
-    //date
-    formatedDate(data,dayafter*3,day3)
-    //temp
-    tempForDay(data,dayafter*3,day3)
-    //description
-    descriptionForDay(data,dayafter*3,day3)
+    const days ={
+        "days1" :prevision1,
+        "day2": prevision2,
+        "day3":prevision3,
+        "days4":prevision4,
+    }
 
-/*prevision day 4*/
-    //date
-    formatedDate(data,dayafter*4,day4)
-    //temp
-    tempForDay(data,dayafter*4,day4)
-    //description
-    descriptionForDay(data,dayafter*4,day4)  
+    createWeatherPrevisionInfo(weatherPrevision,data,days)
+   
+    /*Add the day as class for the element */
+        let i = 1;
+        document.querySelectorAll('.prevision-day').forEach(d=> {
+            d.classList.add("day-"+i);
+            i++;
+        })
+    /**/
+
+    descriptionByDay(data,days)
+
 
 }
 
-function formatedDate(data,day,element)
+
+
+function descriptionByDay(data,days)
+{
+    const entrees = Object.entries(days);
+    let dayAfter = 8 ;
+    let i = 2
+
+    entrees.forEach(([, value])=>{
+        
+        formatedDateByDay(data,dayAfter,value)
+        //temp
+        tempValue(data,dayAfter,value)
+        //description
+        descriptionValue(data,dayAfter,value)
+        dayAfter = 8*i;
+        i++
+    })
+}
+function formatedDateByDay(data,day,element)
 {
     const date = data.list[day].dt_txt
+    
     const dateFormated = date.split("-")
     const dateDay = dateFormated[2].split(' ')
-    ;(0,_cp_createElementWithText__WEBPACK_IMPORTED_MODULE_1__["default"])("h1",`${dateDay[0]}/${dateFormated[1]}`,element)
+    
+    // Create date with date of the data)
+    const dateTest = new Date(date.split(" ")[0]); // Vous pouvez spécifier votre propre date ici
+
+    const weekDay = dateTest.getDay();
+    
+    const days = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
+    const dayName = days[weekDay];
+
+    const dateForPrevision = (0,_cp_createElementWithText__WEBPACK_IMPORTED_MODULE_1__["default"])("h3",`${dayName} \n ${dateDay[0]}/${dateFormated[1]}`,element)
+    dateForPrevision.style.textAlign = "center"
+    
 }
 
-function tempForDay(data,day,element)
+function descriptionByHour(data,days)
+{
+    const entrees = Object.entries(days);
+    let dayAfter = 0;
+    let i = 1
+
+    entrees.forEach(([, value])=>{
+        
+        formatedDateByHour(data,dayAfter,value)
+        //temp
+         tempValue(data,dayAfter,value)
+        // //description
+         descriptionValue(data,dayAfter,value)
+        dayAfter = i++;
+        
+    })
+}
+function formatedDateByHour(data,day,element)
+{
+     const date = data.list[day].dt_txt
+    const dateSplit = date.split(' ');
+    const dateHour = dateSplit[1];
+    const dateHourSplit = dateHour.split(':')
+    const dateDisply = dateHourSplit[0]+"h"
+    const dateForPrevision = (0,_cp_createElementWithText__WEBPACK_IMPORTED_MODULE_1__["default"])("h3",dateDisply,element)
+    
+}
+
+
+function createWeatherPrevisionInfo(element,data,days)
+{
+    const previsionType = (0,_cp_container__WEBPACK_IMPORTED_MODULE_0__["default"])('Prevision-type',element);
+    const btnDaily = (0,_cp_createElementWithText__WEBPACK_IMPORTED_MODULE_1__["default"])('button',"Daily",previsionType,"btn-prevision-type");
+    const btnHourly =(0,_cp_createElementWithText__WEBPACK_IMPORTED_MODULE_1__["default"])('button',"Hourly",previsionType,"btn-prevision-type");
+
+    btnDaily.classList.add("focus")
+    btnDaily.addEventListener('click',(e)=>{
+        e.preventDefault(); 
+        btnHourly.classList.remove("focus")
+        btnDaily.classList.add("focus")
+        clearWeatherPrevision(days)
+        descriptionByDay(data,days)
+    })
+    
+    btnHourly.addEventListener('click',(e)=>{
+        e.preventDefault(); 
+        btnDaily.classList.remove("focus")
+        btnHourly.classList.add("focus")
+        clearWeatherPrevision(days)
+        descriptionByHour(data,days)
+
+    })
+
+
+}
+
+/*Clear elements to display weatherPrevisions new values */
+function clearWeatherPrevision(days)
+{
+ 
+     const entrees = Object.entries(days);
+     entrees.forEach(([, value])=>{
+         value.innerHTML= " "
+         })
+}
+
+
+
+function tempValue(data,day,element)
 {
     
     const temperature = Math.round(data.list[day].main.temp)
     ;(0,_cp_createElementWithText__WEBPACK_IMPORTED_MODULE_1__["default"])("h3",temperature+"°C",element)
 }
-
-function descriptionForDay(data,day,element)
+/*Make description for the Day */
+function descriptionValue(data,day,element)
 {
+    
     let description = data.list[day].weather[0].description
     const previsionDescription = (0,_cp_createElementWithText__WEBPACK_IMPORTED_MODULE_1__["default"])("h3",description,element,"prevision-description")
     
@@ -5717,6 +5814,7 @@ function descriptionForDay(data,day,element)
                 inconDescription.classList.add("Icon-description-weather")
             }
 }
+
 
 
 
